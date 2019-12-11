@@ -1,0 +1,44 @@
+body {
+    min-width: 550px;      /* 2x LC width + RC width */
+  }
+  #container {
+    padding-left: 200px;   /* LC width */
+    padding-right: 150px;  /* RC width */
+  }
+  #container .column {
+    position: relative;
+    float: left;
+    background-color: beige; // test color
+    border-color: black; // test color
+    border-style: solid;
+    border-width: .5px;
+  }
+  #center {
+    width: 97%;
+    margin-left: 1px;
+    margin-right: 10px;
+    padding-left: 5px;
+  }
+
+                    // not sure if needed or not
+//   #center2 {
+//     width: 97%;
+//     margin-left: 1px;
+//     margin-right: 10px;
+//     margin-top: 10px;
+//     padding-left: 5px;
+//   }
+  #left {
+    width: 200px;          /* LC width */
+    right: 200px;          /* LC width */
+    margin-left: -100%;
+    padding-left: 5px;
+  }
+  #right {
+    width: 150px;          /* RC width */
+    margin-right: -150px;  /* RC width */
+    padding-left: 5px;
+  }
+  #footer {
+    clear: both;
+  }
