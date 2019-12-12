@@ -46,6 +46,8 @@ export class UploadComponent implements OnInit {
   descInput: string;
   postBody: PostBody;
 
+  tagArray: string[] = new Array();
+
   id: string;
 
   add(event: MatChipInputEvent): void {
@@ -120,9 +122,15 @@ export class UploadComponent implements OnInit {
 
   onPost(){
     this.imgUrl = this.exampleImg;
-    
+    console.log(this.tags);
+    for (let key of Object.keys(this.tags)) {
+      let phrase = this.tags[key];
+      this.tagArray.push(phrase['phrase'])
+      console.log(this.tagArray);
+    }
+
     //console.log(this.userId, this.imgUrl, this.titleInput, this.descInput, this.tags);
-    this.postBody = {creatorId: this.userId, imageURL: this.imgUrl, title: this.titleInput, description: this.descInput, tags: JSON.stringify(this.tags) }
+    this.postBody = {creatorId: this.userId, imageURL: this.imgUrl, title: this.titleInput, description: this.descInput, tags: this.tagArray }
 
     this._http.postImage(this.postBody).subscribe(data => {
       //console.log(data);
