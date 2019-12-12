@@ -14,12 +14,15 @@
             
               <mat-card class="img-card">
                 
-                <a routerLink="/image-details" (click)="imageClick(img.imageId)"><img mat-card-image src="{{img.imageURL}}"></a>
+                <a routerLink="/image-details" (click)="imageClick(img.title)"><img mat-card-image src="{{img.imageURL}}"></a>
+                <mat-card-content>
+                    <p class="title"> {{img.title}} </p>
+                    <p class="creator"> by: {{Usernames[i]}} </p>
+                </mat-card-content>
               </mat-card>
             
             
-              <p class="title"> {{img.title}} </p>
-              <p class="creator"> by: {{Usernames[i]}} </p>
+
             
           
         </li>

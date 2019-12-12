@@ -13,7 +13,7 @@ export interface PostBody {
   imageURL: string;
   title: string;
   description: string;
-  tags: Tag[];
+  tags: Object;
 }
 //console.log(this.userId, this.imgUrl, this.titleInput, this.descInput, this.tags);
 @Component({
@@ -122,7 +122,7 @@ export class UploadComponent implements OnInit {
     this.imgUrl = this.exampleImg;
     
     //console.log(this.userId, this.imgUrl, this.titleInput, this.descInput, this.tags);
-    this.postBody = {creatorId: this.userId, imageURL: this.imgUrl, title: this.titleInput, description: this.descInput, tags: this.tags }
+    this.postBody = {creatorId: this.userId, imageURL: this.imgUrl, title: this.titleInput, description: this.descInput, tags: JSON.stringify(this.tags) }
 
     this._http.postImage(this.postBody).subscribe(data => {
       //console.log(data);

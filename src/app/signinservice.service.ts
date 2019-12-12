@@ -5,9 +5,9 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class SigninserviceService {
-
   constructor(private http: HttpClient) { }
   authenticateUser(username: string, password: string){
-    return this.http.get('http://localhost:8080/user/userAuthentication/{username}{password}?password=' + password + "&username=" + username);
+    return this.http.get('http://pixiv-clone-backend.herokuapp.com/user/userAuthentication/{username}{password}?password=' + password + "&username=" + username);
   }
+
 }

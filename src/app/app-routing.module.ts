@@ -12,8 +12,8 @@ import { SearchPageComponent } from './search-page/search-page.component';
 
 
 const routes: Routes = [
-  { path: '', component: UserHomeComponent},
-  { path: 'home', component: HomeComponent},
+  { path: 'user-home', component: UserHomeComponent},
+  { path: '', component: HomeComponent},
   { path: 'sign-in', component: SignInComponent},
   { path: 'post', component: PostComponent},
   { path: 'create-account', component: CreateAccountComponent},
@@ -27,4 +27,6 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule { 
+  
+}

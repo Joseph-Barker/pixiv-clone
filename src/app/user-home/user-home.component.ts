@@ -3,7 +3,6 @@ import { HttpService } from '../http.service';
 import { ImageService } from '../image.service';
 
 
-
 @Component({
   selector: 'app-user-home',
   templateUrl: './user-home.component.html',
@@ -34,6 +33,10 @@ export class UserHomeComponent implements OnInit {
     this._http.getUserById(this.userId).subscribe(data => {
       this.user = data;
       //console.log(this.user);
+      if (sessionStorage.getItem('newLogin') === "true") {
+        sessionStorage.setItem('newLogin', "false");
+        location.reload();
+      }
     });     
   
     //setup daily rankings with corresponding usernames 

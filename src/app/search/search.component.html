@@ -4,9 +4,9 @@
         <mat-card-header>
           <mat-card-title></mat-card-title>
         </mat-card-header>
-        <a routerLink="/image-details" (click)="imageClick(image.imageId)"><img mat-card-image src="{{ image.imageURL }}"></a>
+        <a routerLink="/image-details" (click)="imageClick(image.title)"><img mat-card-image src="{{ image.imageURL }}"></a>
         <mat-card-content>
-          <span class="image-title">{{ image.title }} <button mat-icon-button color="primary"> <mat-icon id="icon" (click)="onBookmark(image.imageId)" >{{ BookmarkMap.get(image.imageId) }}</mat-icon> </button></span>
+          <span class="image-title">{{ image.title }} <button mat-icon-button color="primary"> <mat-icon id="icon" (click)="onBookmark(image.title)" >{{ BookmarkMap.get(image.title) }}</mat-icon> </button></span>
           <br/>
           <p class="creator">  by: {{BMUsernames[i]}} </p>
         </mat-card-content>

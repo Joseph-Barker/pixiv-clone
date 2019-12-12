@@ -45,7 +45,7 @@ export class SearchComponent implements OnInit {
             //console.log(img.toString());
             console.log(data);
             this.bookmarkedImgs[i] = data[0];
-            this.BookmarkMap.set(this.bookmarkedImgs[i]['imageId'], "favorite")
+            this.BookmarkMap.set(this.bookmarkedImgs[i]['title'], "favorite")
             //get the creator's user name
             this._http.getUserById(data[0]['creatorId']).subscribe(data => {
               console.log(data);
@@ -63,16 +63,16 @@ export class SearchComponent implements OnInit {
   
   onBookmark(imgId: string){
     this.bookmark = {imageId: imgId, userId: this.userId};
-    
+    console.log(this.BookmarkMap.get(imgId));
     if( this.BookmarkMap.get(imgId) === "favorite_border" ) {
       this.BookmarkMap.set(imgId, "favorite");                  //left off here!
       this._http.bookmark( this.bookmark ).subscribe(data => {
-        console.log(data);
+        //console.log(data);
       }); 
     } else {
       this.BookmarkMap.set(imgId, "favorite_border");
       this._http.unbookmark( this.bookmark ).subscribe(data => {
-        console.log(data);
+        //console.log(data);
       });       
     }
   }

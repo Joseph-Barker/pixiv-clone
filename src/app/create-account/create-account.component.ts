@@ -37,9 +37,10 @@ export class CreateAccountComponent implements OnInit {
             this.error = "Account already exists or Username is taken.";
         }
         else {
-          this.router.navigate(['']);
-          sessionStorage.setItem('email', data['email']);
-          sessionStorage.setItem('username', data['username']);
+          this.router.navigate(['/user-home']);
+          sessionStorage.setItem('email', this.email);
+          sessionStorage.setItem('username', this.username);
+          sessionStorage.setItem('newLogin', "true");
           this.error = "";
         }        
       }

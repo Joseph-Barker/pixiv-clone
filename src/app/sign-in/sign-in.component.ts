@@ -34,10 +34,11 @@ export class SignInComponent implements OnInit {
           this.password = "";
           this.error = "Username or Password incorrect.";
         }
-        else {
-          this.router.navigate(['']);
+        else {          
+          this.router.navigate(['/user-home']);
           sessionStorage.setItem('email', data['email']);
           sessionStorage.setItem('username', data['username']);
+          sessionStorage.setItem('newLogin', "true");
           this.error = "";
         }
       }
