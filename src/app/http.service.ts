@@ -82,7 +82,7 @@ export class HttpService {
     //return this.http.get('http://www.mocky.io/v2/5de2120c3200003976809547');
 
     // test
-    return this.http.get('https://pixiv-clone-backend.herokuapp.com/user/getAllimages');
+    return this.http.get('http://www.mocky.io/v2/5df2d84f31000087009a34a9');
   }
 
   getPopularRankings(){
