@@ -9,6 +9,6 @@ export class CreateaccountService {
   constructor(private http: HttpClient) { }
   createAccount(username: string, password: string, email: string){
     
-    return this.http.post('http://pixiv-clone-backend.herokuapp.com/user/addUser?email=' + email + '&password=' + password + '&username=' + username, true);
+    return this.http.post('https://pixiv-clone-backend.herokuapp.com/user/addUser?email=' + email + '&password=' + password + '&username=' + username, true);
   }
 }
